@@ -2,12 +2,24 @@
 var startButton = document.querySelector("#start-game-btn");
 var clearScoresBtn = document.querySelector("#clear-scores-btn");
 var timerEl = document.querySelector("#timer");
+var question = document.querySelector("#question");
+var answerEl1 = document.querySelector("#answer1");
+var answerEl2 = document.querySelector("#answer2");
+var answerEl3 = document.querySelector("#answer3");
+var answerEl4 = document.querySelector("#answer4");
+
 
 var score = "";
 var timeLeft = "";
 
 // Questions are declared in global scope
-
+var questionArr = [
+    {
+    question : "What is the capital of UK?",
+    choices : ["Scotland", "London", "Istanbul", "The Moon"],
+    answer : "B"
+    },
+]
 
 // Page is loaded
     // High scores element is shown on page
@@ -38,10 +50,13 @@ function startGame () {
     score = "0";
     timeLeft = "60";
     startTimer();
+    renderQuestions(0);
     
 }
 
-function startTimer() {
+
+
+function startTimer () {
     // Sets timer
     timer = setInterval(function() {
       timeLeft--;
@@ -54,6 +69,16 @@ function startTimer() {
       }
     }, 1000);
   }
+
+function renderQuestions (i) {
+    question.textContent = questionArr[i].question;
+    answerEl1.textContent = questionArr[i].choices[0];
+    answerEl2.textContent = questionArr[i].choices[1];
+    answerEl3.textContent = questionArr[i].choices[2];
+    answerEl4.textContent = questionArr[i].choices[3];
+}
+
+
 
 // Question answered
     // If incorrect, 10 seconds is subtracted from clock

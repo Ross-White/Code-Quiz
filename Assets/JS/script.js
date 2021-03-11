@@ -1,3 +1,13 @@
+// Declaring Variables
+var startButton = document.getElementById("start-game-btn");
+var clearScoresBtn = document.getElementById("clear-scores-btn");
+
+
+document.querySelector(".question-card").style.display = "none";
+document.querySelector(".end-card").style.display = "none";
+
+
+
 // Questions are declared in global scope
 
 // Page is loaded

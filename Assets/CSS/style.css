@@ -1,0 +1,21 @@
+body {
+    background-color: #aab3bb;
+    align-items: center;
+    font-family: poppins, medium;
+    display: block;
+
+
+}
+
+.container {
+    background-color: #04355e;
+    border: black;
+    border-radius: 2%;
+    width: 50%;
+    text-align: center;
+    padding: 2%;
+    margin: auto;
+    margin-top: 10px;
+    height: 30%;
+    min-height: 350px;
+}

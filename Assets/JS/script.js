@@ -1,12 +1,32 @@
 // Declaring Variables
 var startButton = document.querySelector("#start-game-btn");
 var clearScoresBtn = document.querySelector("#clear-scores-btn");
+var saveButton = document.querySelector("#save-btn");
 var timerEl = document.querySelector("#timer");
 var question = document.querySelector("#question");
 var answerEl1 = document.querySelector("#answer1");
 var answerEl2 = document.querySelector("#answer2");
 var answerEl3 = document.querySelector("#answer3");
 var answerEl4 = document.querySelector("#answer4");
+var scoresList = document.querySelector("#high-scores");
+
+// var highScores = JSON.parse(localStorage.getItem("localScores")) || [];
+// var scores = [];
+
+// function renderScores() {
+//     scoresList.innerHTML = "";
+
+//     for (var i = 0; i <scores.length; i++) {
+//         var score = scores[];
+
+//         var li = document.createElement("li");
+//         li.textContent = score;
+//         li.setAttribute("data-index", i);
+
+//         scoresList.appendChild(li);
+//     }
+// }
+
 
 // var timeLeft = "";
 // var score = 0;
@@ -143,5 +163,16 @@ function gameOver () {
     clearInterval(timer);
     document.querySelector(".question-card").style.display = "none";
     document.querySelector(".end-card").style.display = "inherit";
-
+    document.querySelector("#score").textContent = score;
 }
+
+// saveButton.addEventListener("click", function(event) {
+//     event.preventDefault();
+//     var localScore = JSON.parse(localStorage.getItem(storageKey));
+//     if (localScore === null) {
+//         localScore = Array();
+//     }
+    
+//     var score = document
+// }
+

@@ -3,8 +3,10 @@ body {
     align-items: center;
     font-family: poppins, medium;
     display: block;
+}
 
-
+header {
+    display: inline;
 }
 
 .container {
@@ -12,9 +14,20 @@ body {
     border: black;
     border-radius: 2%;
     width: 50%;
+    align-items: center;
     text-align: center;
     padding: 2%;
     margin: 10% 25%;
     height: 30%;
     min-height: 350px;
+}
+
+.options {    
+    flex-direction: column;
+    display: flex;
+    margin: 2% auto;
+}
+
+.options:hover {
+    cursor: pointer;
 }

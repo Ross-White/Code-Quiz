@@ -136,11 +136,10 @@ function checkAnswer(element) {
     }  
 }
 
-
 // gameOver function
     // Question, timer, score sections are hidden*
     // User initials input box is shown*
-        // on Button clock, Initials and score are saved to local storage
+        // on Button clock, Initials and score are saved to local storage*
             // Resets back to initial page
 
 function gameOver() {
@@ -161,6 +160,8 @@ saveButton.addEventListener("click", function(event) {
     console.log(highscores);
     highscores.push(newscore);
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+    location.reload();
 
 })
 

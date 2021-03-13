@@ -62,6 +62,13 @@ function displayScores() {
     });
 }
 
+function clearScores() {
+    window.localStorage.removeItem("highscores");
+    window.location.reload();
+} 
+
+clearScoresBtn.addEventListener("click", clearScores);
+
 init ();
 
 // Button click starts quiz
@@ -162,8 +169,7 @@ function gameOver() {
     document.querySelector("#score").textContent = score;
 }
 
-saveButton.addEventListener("click", function(event) {
-    event.preventDefault();
+function saveScores() {
     var initials = initialsEl.value.trim();
     var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
     var newscore = {
@@ -178,8 +184,10 @@ saveButton.addEventListener("click", function(event) {
     var topScores = highscores.slice(0, 5);
     window.localStorage.setItem("highscores", JSON.stringify(topScores));
 
-    location.reload();
+    window.location.reload();
 
-})
+}
+
+saveButton.addEventListener("click", saveScores);
 
 

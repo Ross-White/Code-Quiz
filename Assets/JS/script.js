@@ -9,28 +9,12 @@ var answerEl2 = document.querySelector("#answer2");
 var answerEl3 = document.querySelector("#answer3");
 var answerEl4 = document.querySelector("#answer4");
 var scoresList = document.querySelector("#high-scores");
-
-// var highScores = JSON.parse(localStorage.getItem("localScores")) || [];
-// var scores = [];
-
-// function renderScores() {
-//     scoresList.innerHTML = "";
-
-//     for (var i = 0; i <scores.length; i++) {
-//         var score = scores[];
-
-//         var li = document.createElement("li");
-//         li.textContent = score;
-//         li.setAttribute("data-index", i);
-
-//         scoresList.appendChild(li);
-//     }
-// }
+var initialsEl = document.querySelector('#initials');
 
 
-// var timeLeft = "";
-// var score = 0;
-// var i = 0;
+var timeLeft = "";
+var score = 0;
+var i = 0;
 
 // Questions are declared in global scope
 var questionArr = [
@@ -126,10 +110,10 @@ answerEl4.addEventListener("click", function() {
 });
 
 // Question answered
-    // If incorrect, 10 seconds is subtracted from clock
-    // Else. If correct, score is increased by 1
-        // If all questions are answered, then end quiz. gameOver function is called.
-    // Else. Next question appears
+    // If incorrect, 10 seconds is subtracted from clock*
+    // Else. If correct, score is increased by 1*
+        // If all questions are answered, then end quiz. gameOver function is called.*
+    // Else. Next question appears*
 
 function checkAnswer(element) {
     correct = questionArr[i].answer;
@@ -154,25 +138,30 @@ function checkAnswer(element) {
 
 
 // gameOver function
-    // Question, timer, score sections are hidden
-    // User initials input box is shown
+    // Question, timer, score sections are hidden*
+    // User initials input box is shown*
         // on Button clock, Initials and score are saved to local storage
             // Resets back to initial page
 
-function gameOver () {
+function gameOver() {
     clearInterval(timer);
     document.querySelector(".question-card").style.display = "none";
     document.querySelector(".end-card").style.display = "inherit";
     document.querySelector("#score").textContent = score;
 }
 
-// saveButton.addEventListener("click", function(event) {
-//     event.preventDefault();
-//     var localScore = JSON.parse(localStorage.getItem(storageKey));
-//     if (localScore === null) {
-//         localScore = Array();
-//     }
-    
-//     var score = document
-// }
+saveButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    var initials = initialsEl.value.trim();
+    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+    var newscore = {
+        name: initials,
+        score: score
+    };
+    console.log(highscores);
+    highscores.push(newscore);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+})
+
 

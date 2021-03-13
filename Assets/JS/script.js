@@ -41,24 +41,37 @@ var questionArr = [
 ]
 
 // Page is loaded
-    // High scores element is shown on page
-        // High scores are retrieved from local storage
-    // Start game button is shown
-function init () {
-document.querySelector(".question-card").style.display = "none";
-document.querySelector(".end-card").style.display = "none";
+    // High scores element is shown on page*
+        // High scores are retrieved from local storage*
+    // Start game button is shown*
+function init() {
+    document.querySelector(".question-card").style.display = "none";
+    document.querySelector(".end-card").style.display = "none";
+    displayScores();
 }
 
-init();
+function displayScores() {
+    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+    
+    highscores.forEach(function(score) {
+        var liTag = document.createElement("li");
+        liTag.textContent = score.name + " - " + score.score;
+
+        var olEl = document.getElementById("high-scores");
+        olEl.appendChild(liTag);
+    });
+}
+
+init ();
 
 // Button click starts quiz
     // High scores element is hidden*
     // Score is set to zero*
     // Timer resets to 60 seconds and starts counting down*
-            // Timer function checks if =0 every second
-                // If timer =0 quiz ends. gemeOver function is called
+            // Timer function checks if =0 every second*
+                // If timer =0 quiz ends. gemeOver function is called*
         // Timer element is shown on page*
-    // Question element is shown with question and answers displayed
+    // Question element is shown with question and answers displayed*
 
 startButton.addEventListener("click", startGame);
 
@@ -159,7 +172,11 @@ saveButton.addEventListener("click", function(event) {
     };
     console.log(highscores);
     highscores.push(newscore);
-    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+    highscores.sort(function(a, b) {
+        return b.score - a.score;
+    });
+    var topScores = highscores.slice(0, 5);
+    window.localStorage.setItem("highscores", JSON.stringify(topScores));
 
     location.reload();
 

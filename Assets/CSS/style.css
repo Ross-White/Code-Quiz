@@ -1,12 +1,23 @@
 body {
-    background-color: #aab3bb;
     align-items: center;
     font-family: poppins, medium;
     display: block;
+    font-size: 16px;
 }
 
 header {
-    display: inline;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #04355e;
+    color: white;
+    height: 20%;
+    min-height: 100px;
+}
+
+header > h1 {
+    margin-left: 10%;
+    font-size: 3em;
 }
 
 .container {
@@ -20,6 +31,7 @@ header {
     margin: 10% 25%;
     height: 30%;
     min-height: 350px;
+    color: white;
 }
 
 .options {    
@@ -30,5 +42,26 @@ header {
 
 .options:hover {
     cursor: pointer;
-    background-color: green;
+    background-color: white;
+    color: #04355e;
+}
+
+.list {
+    list-style: none;
+}
+
+li {
+    width: 20%;
+    margin: auto;
+}
+
+.button {
+    background-color: white;
+    font-family: inherit;
+    border-style: none;
+}
+
+#timer {
+    margin-right: 10%;
+    font-size: 2em;
 }

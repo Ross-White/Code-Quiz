@@ -1,7 +1,6 @@
 body {
     align-items: center;
     font-family: poppins, medium;
-    display: block;
     font-size: 16px;
 }
 
@@ -13,6 +12,7 @@ header {
     color: white;
     height: 20%;
     min-height: 100px;
+    font-size: 0.8em;
 }
 
 header > h1 {
@@ -26,6 +26,7 @@ header > h1 {
     border-radius: 2%;
     width: 50%;
     align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 2%;
     margin: 10% 25%;
@@ -35,7 +36,7 @@ header > h1 {
 }
 
 .options {    
-    flex-direction: column;
+    flex-direction: row;
     display: flex;
     margin: 2% auto;
 }
@@ -52,7 +53,8 @@ header > h1 {
 
 li {
     width: 20%;
-    margin: auto;
+    min-width: 100px;
+    left: 50%;
 }
 
 .button {

@@ -28,6 +28,10 @@ WHEN the game is over
 THEN I can save my initials and my score
 ```
 
+## Screenshot
+
+![Screenhot](Assets\Pictures\Screenshot..JPG)
+
 ## Deployed Application
 
 https://ross-white.github.io/Code-Quiz/

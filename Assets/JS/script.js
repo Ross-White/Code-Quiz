@@ -19,26 +19,32 @@ var i = 0;
 // Questions are declared in global scope
 var questionArr = [
     {
-        question : "What is the capital of UK?",
-        choices : ["Scotland", "London", "Istanbul", "The Moon"],
-        answer : "London",
+        title: "Commonly used data types DO NOT include:",
+        choices: ["strings", "booleans", "alerts", "numbers"],
+        answer: "alerts"
     },
     {
-        question: "Who framed Roger Rabbit?",
-        choices: ["Donald Trump", "Daffy Duck", "Doom", "A tree"],
-        answer: "Doom",
-      },
-      {
-        question: "What time is it?",
-        choices: ["Now", "Later", "Before", "Never"],
-        answer: "Now",
-      },
-      {
-        question: "Best football player?",
-        choices: ["Maradona", "Pele", "Zidane", "Goater"],
-        answer: "Goater",
-      }
-]
+        title: "The condition in an if / else statement is enclosed within ____.",
+        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+        answer: "parentheses"
+    },
+    {
+        title: "Arrays in Javascript can be used to store ____.",
+        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+        answer: "all of the above"
+    },
+    {
+        title: "String values must be enclosed within ____ when being assigned to variables.",
+        choices: ["commas", "curly brackets", "quotes", "parenthesis"],
+        answer: "quotes"
+    },
+    {
+        title: "A very useful tool for used during development and debugging for printing content to the debugger is:",
+        choices: ["Javascript", "terminal / bash", "for loops", "console log"],
+        answer: "console log"
+    },
+
+];
 
 // Page is loaded
     // High scores element is shown on page*
@@ -51,7 +57,7 @@ function init() {
 }
 
 function displayScores() {
-    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];    
     
     highscores.forEach(function(score) {
         var liTag = document.createElement("li");
@@ -108,7 +114,7 @@ function startTimer () {
 
 function renderQuestions (i) {
     // Renders questions and answers
-    question.textContent = questionArr[i].question;
+    question.textContent = questionArr[i].title;
     answerEl1.textContent = questionArr[i].choices[0];
     answerEl2.textContent = questionArr[i].choices[1];
     answerEl3.textContent = questionArr[i].choices[2];

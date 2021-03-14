@@ -30,7 +30,7 @@ THEN I can save my initials and my score
 
 ## Screenshot
 
-![Screenhot](Assets\Pictures\Screenshot..JPG)
+![Screenhot](Assets\Pictures\Screenshot.JPG)
 
 ## Deployed Application
 
